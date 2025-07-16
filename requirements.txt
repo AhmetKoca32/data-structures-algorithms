@@ -1,0 +1,22 @@
+# Veri Yapıları ve Algoritmalar Projesi
+# Python 3.7+ gereklidir
+
+# Test için
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Kod kalitesi için
+black>=22.0.0
+flake8>=5.0.0
+mypy>=1.0.0
+
+# Performans testi için
+timeit>=1.0.0
+
+# Görselleştirme için (opsiyonel)
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Jupyter notebook için (opsiyonel)
+jupyter>=1.0.0
+ipykernel>=6.0.0 
