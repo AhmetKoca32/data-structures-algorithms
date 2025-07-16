@@ -8,21 +8,36 @@ Bu repository, temel veri yapıları ve algoritmaların Python implementasyonlar
 data-structures-algorithms/
 ├── data_structures/
 │   ├── arrays/
+│   │   ├── array.py
+│   │   └── README.md
 │   ├── linked_lists/
 │   ├── stacks/
 │   ├── queues/
 │   ├── trees/
 │   ├── graphs/
+│   │   ├── graph.py
+│   │   └── README.md
 │   ├── heaps/
 │   └── hash_tables/
 ├── algorithms/
 │   ├── sorting/
+│   │   ├── sorting_algorithms.py
+│   │   └── README.md
 │   ├── searching/
+│   │   ├── searching_algorithms.py
+│   │   └── README.md
 │   ├── graph_algorithms/
+│   │   ├── graph_algorithms.py
+│   │   └── README.md
 │   ├── dynamic_programming/
 │   └── greedy_algorithms/
-└── examples/
-    └── practical_applications/
+├── examples/
+│   └── practical_applications/
+│       ├── student_management.py
+│       └── README.md
+├── tests/
+├── README.md
+└── test_manual.py
 ```
 
 ## 🚀 Kullanım
@@ -38,12 +53,12 @@ bulunmaktadır.
 ## 📚 İçerik
 
 ### Veri Yapıları
-- **Arrays**: Diziler ve dinamik diziler
+- **Arrays**: Diziler ve dinamik diziler ✅
 - **Linked Lists**: Tek yönlü, çift yönlü ve dairesel bağlı listeler
 - **Stacks**: Yığın veri yapısı
 - **Queues**: Kuyruk veri yapısı
 - **Trees**: İkili ağaçlar, AVL ağaçları, B-ağaçları
-- **Graphs**: Graf veri yapısı ve temsilleri
+- **Graphs**: Graf veri yapısı ve temsilleri (Adjacency List, Matrix, Edge List) ✅
 - **Heaps**: Yığın ağaçları
 - **Hash Tables**: Hash tabloları
 
@@ -84,6 +99,11 @@ python algorithms/sorting/sorting_algorithms.py
 **Arama Algoritmaları:**
 ```bash
 python algorithms/searching/searching_algorithms.py
+```
+
+**Graf Veri Yapısı:**
+```bash
+python data_structures/graphs/graph.py
 ```
 
 **Graf Algoritmaları:**
@@ -144,6 +164,14 @@ Manuel test yaparken şunları kontrol edin:
 - [ ] Diğer arama algoritmaları doğru sonuç veriyor mu?
 - [ ] Bulunamayan elemanlar için None döndürüyor mu?
 
+#### ✅ Graf Veri Yapısı:
+- [ ] Adjacency List Graph çalışıyor mu?
+- [ ] Adjacency Matrix Graph çalışıyor mu?
+- [ ] Edge List Graph çalışıyor mu?
+- [ ] Kenar ekleme/silme çalışıyor mu?
+- [ ] Komşu listesi alma çalışıyor mu?
+- [ ] Ağırlık sorgulama çalışıyor mu?
+
 #### ✅ Graf Algoritmaları:
 - [ ] BFS doğru mesafeleri hesaplıyor mu?
 - [ ] DFS doğru sırayla geziyor mu?
@@ -167,6 +195,7 @@ Manuel test yaparken şunları kontrol edin:
 2. **Sonra tek tek test edin:**
    ```bash
    python data_structures/arrays/array.py
+   python data_structures/graphs/graph.py
    python algorithms/sorting/sorting_algorithms.py
    python algorithms/searching/searching_algorithms.py
    python algorithms/graph_algorithms/graph_algorithms.py

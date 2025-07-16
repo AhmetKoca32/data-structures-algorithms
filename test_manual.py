@@ -68,6 +68,64 @@ def test_arrays():
         print(f"   ❌ Array testi başarısız: {e}")
 
 
+def test_graph_data_structures():
+    """Graph veri yapılarını test et"""
+    print("\n" + "=" * 50)
+    print("GRAPH VERİ YAPISI TESTİ")
+    print("=" * 50)
+    
+    try:
+        from data_structures.graphs.graph import (
+            AdjacencyListGraph, AdjacencyMatrixGraph, EdgeListGraph
+        )
+        
+        # Test verileri
+        edges = [(0, 1, 4), (0, 2, 2), (1, 2, 1), (1, 3, 5)]
+        
+        # Adjacency List Graph testi
+        print("\n1. Adjacency List Graph Testi:")
+        adj_list_graph = AdjacencyListGraph(directed=False, weighted=True)
+        
+        for u, v, w in edges:
+            adj_list_graph.add_edge(u, v, w)
+        
+        print(f"   Düğüm sayısı: {adj_list_graph.get_vertex_count()}")
+        print(f"   Kenar sayısı: {adj_list_graph.get_edge_count()}")
+        print(f"   0'ın komşuları: {adj_list_graph.get_neighbors(0)}")
+        print(f"   0-1 arası ağırlık: {adj_list_graph.get_edge_weight(0, 1)}")
+        print(f"   Graf bağlı mı: {adj_list_graph.is_connected()}")
+        print(f"   ✅ Adjacency List Graph testi başarılı!")
+        
+        # Adjacency Matrix Graph testi
+        print("\n2. Adjacency Matrix Graph Testi:")
+        adj_matrix_graph = AdjacencyMatrixGraph(directed=False, weighted=True)
+        
+        for u, v, w in edges:
+            adj_matrix_graph.add_edge(u, v, w)
+        
+        print(f"   Düğüm sayısı: {adj_matrix_graph.get_vertex_count()}")
+        print(f"   Kenar sayısı: {adj_matrix_graph.get_edge_count()}")
+        print(f"   0'ın komşuları: {adj_matrix_graph.get_neighbors(0)}")
+        print(f"   0-1 arası ağırlık: {adj_matrix_graph.get_edge_weight(0, 1)}")
+        print(f"   ✅ Adjacency Matrix Graph testi başarılı!")
+        
+        # Edge List Graph testi
+        print("\n3. Edge List Graph Testi:")
+        edge_list_graph = EdgeListGraph(directed=False, weighted=True)
+        
+        for u, v, w in edges:
+            edge_list_graph.add_edge(u, v, w)
+        
+        print(f"   Düğüm sayısı: {edge_list_graph.get_vertex_count()}")
+        print(f"   Kenar sayısı: {edge_list_graph.get_edge_count()}")
+        print(f"   0'ın komşuları: {edge_list_graph.get_neighbors(0)}")
+        print(f"   0-1 arası ağırlık: {edge_list_graph.get_edge_weight(0, 1)}")
+        print(f"   ✅ Edge List Graph testi başarılı!")
+        
+    except Exception as e:
+        print(f"   ❌ Graph veri yapısı testi başarısız: {e}")
+
+
 def test_sorting_algorithms():
     """Sıralama algoritmalarını test et"""
     print("\n" + "=" * 50)
@@ -292,6 +350,7 @@ def main():
     
     # Tüm testleri çalıştır
     test_arrays()
+    test_graph_data_structures()
     test_sorting_algorithms()
     test_searching_algorithms()
     test_graph_algorithms()
