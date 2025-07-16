@@ -114,6 +114,98 @@ def test_sorting_algorithms():
         print(f"   ❌ Sıralama testi başarısız: {e}")
 
 
+def test_searching_algorithms():
+    """Arama algoritmalarını test et"""
+    print("\n" + "=" * 50)
+    print("ARAMA ALGORİTMALARI TESTİ")
+    print("=" * 50)
+    
+    try:
+        from algorithms.searching.searching_algorithms import (
+            linear_search, binary_search, jump_search,
+            interpolation_search, exponential_search,
+            fibonacci_search, ternary_search
+        )
+        
+        # Test array'i (sıralı)
+        sorted_array = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+        target = 7
+        
+        algorithms = [
+            ("Linear Search", linear_search),
+            ("Binary Search", binary_search),
+            ("Jump Search", jump_search),
+            ("Interpolation Search", interpolation_search),
+            ("Exponential Search", exponential_search),
+            ("Fibonacci Search", fibonacci_search),
+            ("Ternary Search", ternary_search)
+        ]
+        
+        print(f"Test array: {sorted_array}")
+        print(f"Aranan hedef: {target}")
+        
+        for name, algorithm in algorithms:
+            try:
+                result = algorithm(sorted_array, target)
+                if result is not None:
+                    print(f"   ✅ {name}: Bulundu (Index: {result})")
+                else:
+                    print(f"   ❌ {name}: Bulunamadı")
+            except Exception as e:
+                print(f"   ❌ {name}: Hata - {e}")
+        
+        print("   ✅ Arama algoritmaları testi tamamlandı!")
+        
+    except Exception as e:
+        print(f"   ❌ Arama testi başarısız: {e}")
+
+
+def test_graph_algorithms():
+    """Graf algoritmalarını test et"""
+    print("\n" + "=" * 50)
+    print("GRAF ALGORİTMALARI TESTİ")
+    print("=" * 50)
+    
+    try:
+        from algorithms.graph_algorithms.graph_algorithms import (
+            Graph, breadth_first_search, depth_first_search,
+            dijkstra_shortest_path, kruskal_mst, prim_mst
+        )
+        
+        # Test grafı oluştur
+        graph = Graph(directed=False)
+        edges = [(0, 1, 4), (0, 2, 2), (1, 2, 1), (1, 3, 5), (2, 3, 8)]
+        
+        for u, v, w in edges:
+            graph.add_edge(u, v, w)
+        
+        print(f"Graf düğümleri: {graph.get_vertices()}")
+        print(f"Graf kenarları: {graph.get_edges()}")
+        
+        # BFS testi
+        bfs_result = breadth_first_search(graph, 0)
+        print(f"   ✅ BFS mesafeleri: {bfs_result}")
+        
+        # DFS testi
+        dfs_result = depth_first_search(graph, 0)
+        print(f"   ✅ DFS sırası: {dfs_result}")
+        
+        # Dijkstra testi
+        dijkstra_result = dijkstra_shortest_path(graph, 0)
+        print(f"   ✅ Dijkstra en kısa yollar: {dijkstra_result}")
+        
+        # MST testi
+        kruskal_result = kruskal_mst(graph)
+        prim_result = prim_mst(graph, 0)
+        print(f"   ✅ Kruskal MST: {kruskal_result}")
+        print(f"   ✅ Prim MST: {prim_result}")
+        
+        print("   ✅ Graf algoritmaları testi tamamlandı!")
+        
+    except Exception as e:
+        print(f"   ❌ Graf testi başarısız: {e}")
+
+
 def test_student_management():
     """Öğrenci yönetim sistemini test et"""
     print("\n" + "=" * 50)
@@ -201,6 +293,8 @@ def main():
     # Tüm testleri çalıştır
     test_arrays()
     test_sorting_algorithms()
+    test_searching_algorithms()
+    test_graph_algorithms()
     test_student_management()
     test_performance()
     

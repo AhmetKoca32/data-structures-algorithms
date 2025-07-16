@@ -48,11 +48,11 @@ bulunmaktadır.
 - **Hash Tables**: Hash tabloları
 
 ### Algoritmalar
-- **Sorting**: Sıralama algoritmaları
-- **Searching**: Arama algoritmaları
-- **Graph Algorithms**: Graf algoritmaları
-- **Dynamic Programming**: Dinamik programlama
-- **Greedy Algorithms**: Açgözlü algoritmalar
+- **Sorting**: 8 farklı sıralama algoritması (Bubble, Selection, Insertion, Merge, Quick, Heap, Counting, Radix)
+- **Searching**: 8 farklı arama algoritması (Linear, Binary, Jump, Interpolation, Exponential, Fibonacci, Ternary)
+- **Graph Algorithms**: Graf gezinme, en kısa yol, MST algoritmaları (BFS, DFS, Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal, Prim)
+- **Dynamic Programming**: Dinamik programlama (henüz oluşturulmadı)
+- **Greedy Algorithms**: Açgözlü algoritmalar (henüz oluşturulmadı)
 
 ## 🛠️ Gereksinimler
 
@@ -79,6 +79,16 @@ python data_structures/arrays/array.py
 **Sıralama Algoritmaları:**
 ```bash
 python algorithms/sorting/sorting_algorithms.py
+```
+
+**Arama Algoritmaları:**
+```bash
+python algorithms/searching/searching_algorithms.py
+```
+
+**Graf Algoritmaları:**
+```bash
+python algorithms/graph_algorithms/graph_algorithms.py
 ```
 
 **Öğrenci Yönetim Sistemi:**
@@ -128,6 +138,18 @@ Manuel test yaparken şunları kontrol edin:
 - [ ] Tek elemanlı array ile çalışıyor mu?
 - [ ] Tekrarlı elemanlarla çalışıyor mu?
 
+#### ✅ Arama Algoritmaları:
+- [ ] Linear search sıralanmamış array'de çalışıyor mu?
+- [ ] Binary search sıralı array'de çalışıyor mu?
+- [ ] Diğer arama algoritmaları doğru sonuç veriyor mu?
+- [ ] Bulunamayan elemanlar için None döndürüyor mu?
+
+#### ✅ Graf Algoritmaları:
+- [ ] BFS doğru mesafeleri hesaplıyor mu?
+- [ ] DFS doğru sırayla geziyor mu?
+- [ ] Dijkstra en kısa yolları buluyor mu?
+- [ ] MST algoritmaları minimum ağacı oluşturuyor mu?
+
 #### ✅ Öğrenci Yönetim Sistemi:
 - [ ] Öğrenci ekleme çalışıyor mu?
 - [ ] Öğrenci arama çalışıyor mu?
@@ -146,6 +168,8 @@ Manuel test yaparken şunları kontrol edin:
    ```bash
    python data_structures/arrays/array.py
    python algorithms/sorting/sorting_algorithms.py
+   python algorithms/searching/searching_algorithms.py
+   python algorithms/graph_algorithms/graph_algorithms.py
    python examples/practical_applications/student_management.py
    ```
 
